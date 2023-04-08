@@ -1,6 +1,7 @@
 package fes.aragon.shirts.unit;
 
 import java.util.ArrayList;
+
 import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -15,13 +16,13 @@ public class BuyoutUnit {
 	private Buyout _buyout;
 	
 	@BeforeEach
-	void init() {
+	public void init() {
 		_buyout = new Buyout();
 	}
 	
 	@Test
 	@DisplayName("Check correct create and delete product in buyout")
-	void addDelShirt(){
+	public void addDelShirt(){
 		_buyout.addShirt(ShirtsType.SHORT_SLEEVE);
 		Map<ShirtsType, ArrayList<Shirt>> shirts = _buyout.getBuyout();
 		assertEquals(1, shirts.size());
@@ -32,7 +33,7 @@ public class BuyoutUnit {
 	
 	@Test
 	@DisplayName("Test correct discount prices for each product")
-	void checkPrices() {
+	public void checkPrices() {
 		final ArrayList<Shirt> Lshirts = new ArrayList<>();
 		_buyout.addShirt(ShirtsType.CASUAL_SLEEVE_LONG);
 		_buyout.addShirt(ShirtsType.FORMAL_SLEEVE_LONG);
